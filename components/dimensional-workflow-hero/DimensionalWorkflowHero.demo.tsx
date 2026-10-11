@@ -5,7 +5,7 @@ export default function Demo() {
   const [accent, setAccent] = useState("#22dde7");
   const [distance, setDistance] = useState(1.35);
   const [scrub, setScrub] = useState(0.65);
-  return <>
+  return <div style={{ width: "100%", minWidth: 0, alignSelf: "flex-start" }}>
     <details style={{ position: "fixed", top: 12, right: 16, zIndex: 100, color: "#f2f5fa", background: "#081536", border: "1px solid #ffffff30", borderRadius: 8, padding: "10px 14px", font: "13px system-ui, sans-serif" }}>
       <summary style={{ cursor: "pointer" }}>Customize demo</summary>
       <div style={{ display: "grid", gap: 14, paddingTop: 16, width: 230 }}>
@@ -18,5 +18,5 @@ export default function Demo() {
     </details>
     <DimensionalWorkflowHero accent={accent} motion={{ viewportsPerChapter: distance, maxChapterScroll: 2700, scrub }} />
     <section id="examples" style={{ padding: "80px 24px", background: "#f2f5fa", color: "#102048", fontFamily: "system-ui, sans-serif" }}><h2>Make it yours.</h2><p>Replace the content, add your own finished-site image, and tune the scroll distance.</p></section>
-  </>;
+  </div>;
 }
