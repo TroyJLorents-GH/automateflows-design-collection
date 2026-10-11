@@ -13,3 +13,5 @@ Validated locally on October 10, 2026.
 - Independent demo controls update the accent and motion settings. At 1440 x 900, moving the scroll-distance slider from 1.35 to 3 changes the pin distance from 3645px to 8100px. Reset restores the defaults.
 
 Browser inspection used Chromium. Safari, Firefox, real touch devices and GPU profiling have not been independently tested for this release. Hosted 21st preview review and public URLs are recorded separately.
+
+21st CLI Review completed with one self-contained demo and a supplied cover. The final hosted demo was checked in light/dark host themes and mobile mode. Its native accent control changed the component style to `#a8df80` and Reset restored defaults. The 21st account inventory confirms Published `component:21031`. Public GitHub Pages builds passed.

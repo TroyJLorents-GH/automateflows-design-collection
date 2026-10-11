@@ -6,6 +6,12 @@ This collection starts with the **Dimensional Workflow Hero**, adapted from the 
 
 [Open the live collection demo](https://troyjlorents-gh.github.io/automateflows-design-collection/)
 
+[Use the hero on 21st](https://21st.dev/@troyjlorents-gh/components/dimensional-workflow-hero)
+
+```sh
+npx @21st-dev/cli add @troyjlorents-gh/dimensional-workflow-hero
+```
+
 ![Dimensional Workflow Hero](components/dimensional-workflow-hero/preview.jpg)
 
 ## Run the collection

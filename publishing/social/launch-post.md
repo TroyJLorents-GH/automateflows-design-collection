@@ -24,6 +24,8 @@ Here you go: https://github.com/TroyJLorents-GH/automateflows-design-collection
 
 Live demo: https://troyjlorents-gh.github.io/automateflows-design-collection/
 
+21st component: https://21st.dev/@troyjlorents-gh/components/dimensional-workflow-hero
+
 The README links to the component, examples and prompts. You can change the content, colors and scroll settings.
 
 ## Recording guidance
