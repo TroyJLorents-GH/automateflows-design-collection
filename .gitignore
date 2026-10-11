@@ -1,0 +1,7 @@
+node_modules/
+dist/
+.21st/
+.env*
+!.env.example
+*.log
+qa-results/
