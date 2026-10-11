@@ -4,6 +4,10 @@ Reusable designs, working examples, and implementation prompts by Troy Lorents.
 
 This collection starts with the **Dimensional Workflow Hero**, adapted from the Automate Flows homepage. Additional designs and prompts can live alongside it, each with its own example, credits and publishing record.
 
+[Open the live collection demo](https://troyjlorents-gh.github.io/automateflows-design-collection/)
+
+![Dimensional Workflow Hero](components/dimensional-workflow-hero/preview.jpg)
+
 ## Run the collection
 
 ```sh
@@ -41,6 +45,8 @@ export default function Page() {
 Set `content` to change text, chapters, diagrams, CTA links and optional finished-site imagery. Exported `defaultHeroContent` is a useful starting point. The default build chapter draws a neutral CSS mockup; no branded product screenshot is included. Workflow diagrams are illustrative.
 
 Set `accent`, `className`, `style`, and `motion` to adapt appearance and pacing. `motion` supports `viewportsPerChapter` (default 1.35), `maxChapterScroll` (1350px) and `scrub` (0.65). Supply at least one chapter; an empty array falls back to the demo chapters. Use one to five chapters for the supported example layouts, with three narrative steps per chapter. More chapters may need a different intro composition.
+
+The working demo has a **Customize demo** disclosure with accent, scroll-distance and smoothing controls. These controls live in the demo itself and work without a hosting platform's control bridge. The demo raises the distance cap to 2700px to allow the full slider range. Motion-setting changes rebuild the scoped timeline and restore the active chapter.
 
 The hero is deliberately a dark visual canvas in both light and dark host themes. Its accent inherits `--color-primary` when no explicit accent is supplied. Scoped `--color-hero-*` and `--font-hero-*` variables let you match your site. Set skip and finale targets to existing elements or routes.
 

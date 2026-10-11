@@ -10,5 +10,6 @@ Validated locally on October 10, 2026.
 - Neutral finished-site preview contains no external image requests.
 - Source includes GSAP context cleanup and instance-scoped DOM selectors.
 - The static panel ResizeObserver schedules scale writes into an animation frame to avoid resize-delivery feedback.
+- Independent demo controls update the accent and motion settings. At 1440 x 900, moving the scroll-distance slider from 1.35 to 3 changes the pin distance from 3645px to 8100px. Reset restores the defaults.
 
 Browser inspection used Chromium. Safari, Firefox, real touch devices and GPU profiling have not been independently tested for this release. Hosted 21st preview review and public URLs are recorded separately.

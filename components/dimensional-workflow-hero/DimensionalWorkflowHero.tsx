@@ -852,6 +852,7 @@ export default function DimensionalWorkflowHero({ content = defaultHeroContent, 
         if (mounted) ScrollTrigger.refresh();
       });
       return () => {
+        if (timeline.current && restorePosition.current === null) restorePosition.current = position.current;
         mounted = false;
         cancelAnimationFrame(frame);
         cancelAnimationFrame(scaleFrame);
@@ -859,7 +860,7 @@ export default function DimensionalWorkflowHero({ content = defaultHeroContent, 
         media.revert();
       };
     },
-    { scope: root, dependencies: [simple], revertOnUpdate: true },
+    { scope: root, dependencies: [simple, content, viewportsPerChapter, maxChapterScroll, scrub], revertOnUpdate: true },
   );
 
   // In the static layout, the chapter whose top has passed 40% of the viewport is the one being read.
@@ -991,3 +992,4 @@ export default function DimensionalWorkflowHero({ content = defaultHeroContent, 
     </div>
   );
 }
+
