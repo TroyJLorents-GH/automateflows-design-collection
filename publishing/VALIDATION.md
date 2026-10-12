@@ -15,3 +15,7 @@ Validated locally on October 10, 2026.
 Browser inspection used Chromium. Safari, Firefox, real touch devices and GPU profiling have not been independently tested for this release. Hosted 21st preview review and public URLs are recorded separately.
 
 21st CLI Review completed with one self-contained demo and a supplied cover. The final hosted demo was checked in light/dark host themes and mobile mode. Its native accent control changed the component style to `#a8df80` and Reset restored defaults. The 21st account inventory confirms Published `component:21031`. Public GitHub Pages builds passed.
+
+## October 12 preview correction
+
+The first release used the page desktop breakpoint inside 21st. A 767 x 610 embedded frame therefore showed the static fallback instead of the 3D deck. The demo now uses a scaled desktop scene with an actual-size pinned viewport. Chromium checks at 767 x 610 confirm one pin spacer, 3D panel transforms, chapter navigation, and no horizontal overflow. Resizing from 1440 x 900 back to 767 x 610 preserves the active chapter. At 390 x 844 and with reduced motion enabled there are zero pin spacers. The Simplify motion control and stored override have been removed. These checks do not claim testing on the user's actual Mac.

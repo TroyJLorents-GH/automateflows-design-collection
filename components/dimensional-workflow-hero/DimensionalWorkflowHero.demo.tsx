@@ -16,7 +16,7 @@ export default function Demo() {
         <button onClick={() => { setAccent("#22dde7"); setDistance(1.35); setScrub(0.65); }} style={{ padding: 8, border: "1px solid #ffffff40", background: "transparent", color: "inherit", cursor: "pointer" }}>Reset demo</button>
       </div>
     </details>
-    <DimensionalWorkflowHero accent={accent} motion={{ viewportsPerChapter: distance, maxChapterScroll: 2700, scrub }} />
+    <DimensionalWorkflowHero presentation="scaled-desktop" accent={accent} motion={{ viewportsPerChapter: distance, maxChapterScroll: 2700, scrub }} />
     <section id="examples" style={{ padding: "80px 24px", background: "#f2f5fa", color: "#102048", fontFamily: "system-ui, sans-serif" }}><h2>Make it yours.</h2><p>Replace the content, add your own finished-site image, and tune the scroll distance.</p></section>
   </div>;
 }

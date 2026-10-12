@@ -56,7 +56,7 @@ The working demo has a **Customize demo** disclosure with accent, scroll-distanc
 
 The hero is deliberately a dark visual canvas in both light and dark host themes. Its accent inherits `--color-primary` when no explicit accent is supplied. Scoped `--color-hero-*` and `--font-hero-*` variables let you match your site. Set skip and finale targets to existing elements or routes.
 
-Desktop motion runs above 900px wide and 649px tall. Smaller screens, reduced-motion preferences and the Simplify motion button use the static reading layout. The preference is stored locally. Resize refresh and toggling preserve reading position within the active desktop story.
+The default responsive hero animates above 900px wide and 649px tall. The registry demo uses `presentation="scaled-desktop"` to fit the desktop composition into embedded frames as small as 600px wide and 360px tall. It scales the visual scene while keeping scroll and pin measurements at the actual frame size. Phones and reduced-motion preferences still use the static reading layout. There is no Simplify motion button or stored motion override. Resize refresh preserves reading position within the active desktop story.
 
 ## Publishing and provenance
 
