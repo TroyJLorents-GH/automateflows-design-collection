@@ -1,27 +1,31 @@
 # Dimensional Workflow Hero on 21st
 
-Status: published to Troy Lorents's personal 21st profile on October 10, 2026.
-
-Stable reference: `component:21031`
+Stable reference: `component:21031`. Update this item rather than deleting or creating another listing.
 
 [Public component](https://21st.dev/@troyjlorents-gh/components/dimensional-workflow-hero)
-
-Install:
 
 ```sh
 npx @21st-dev/cli add @troyjlorents-gh/dimensional-workflow-hero
 ```
 
-Registry URL: https://21st.dev/r/troyjlorents-gh/dimensional-workflow-hero
+Registry: https://21st.dev/r/troyjlorents-gh/dimensional-workflow-hero
 
-The component is Published and accessible by direct link. It has not been submitted for catalog featuring. The live demo and supplied cover were reviewed, including host light/dark themes and mobile static layout. Independent customization controls are provided inside the demo because the generated CLI Review controls did not propagate values reliably during validation.
+The component is published to Troy Lorents's personal profile and accessible by direct link. It has not been submitted for catalog featuring.
+
+## Compact source revision, October 12, 2026
+
+The published component now owns only the dimensional deck, scroll sequence, chapter navigation, accessibility and responsive behavior. Consumers supply title and chapter objects with React panel slots. The compact default demo illustrates three workflows.
+
+The earlier complete workflow renderer and native customization controls remain in `examples/full-workflow-showcase/`. They are not included in the compact 21st copy prompt. This changes the component API; existing projects using `content` and `defaultHeroContent` can keep their installed version or use the retained full source.
 
 Source: `components/dimensional-workflow-hero/DimensionalWorkflowHero.tsx`
 
 Demo: `components/dimensional-workflow-hero/DimensionalWorkflowHero.demo.tsx`
 
 ```sh
-21st publish ./components/dimensional-workflow-hero/DimensionalWorkflowHero.tsx --demo ./components/dimensional-workflow-hero/DimensionalWorkflowHero.demo.tsx --name "Dimensional Workflow Hero" --slug dimensional-workflow-hero --description "A configurable GSAP scroll hero with a dimensional workflow deck, chapter navigation, build scenes and a readable static mobile and reduced-motion layout." --tags hero,scroll,gsap,workflow
+21st publish ./components/dimensional-workflow-hero/DimensionalWorkflowHero.tsx --component component:21031 --demo ./components/dimensional-workflow-hero/DimensionalWorkflowHero.demo.tsx --description "A reusable GSAP hero with a fanned 3D deck, custom React panel slots and static mobile and reduced-motion layouts." --preview ./components/dimensional-workflow-hero/preview.jpg --no-open
 ```
 
-The two TSX files are self-contained for CLI Review. For revisions, use `--component component:21031` to update this listing rather than creating another one. Review the live component, all controls and host themes, then publish the revision. Catalog submission is a separate optional step.
+Use the dedicated CLI Review to verify the live preview before publishing. The component and demo are self-contained; the core requires React, GSAP and @gsap/react. The demo additionally requires lucide-react. No hosting control bridge or customization overlay is needed by the compact example. Revisions retain the listing URL and component identity.
+
+See `publishing/VALIDATION.md` for measured sizes and verification evidence.

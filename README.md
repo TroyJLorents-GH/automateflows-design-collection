@@ -1,14 +1,8 @@
 # Automate Flows Design Collection
 
-Reusable designs, working examples, and implementation prompts by Troy Lorents.
+Reusable designs, examples and implementation prompts by Troy Lorents.
 
-This collection starts with the **Dimensional Workflow Hero**, adapted from the Automate Flows homepage. Additional designs and prompts can live alongside it, each with its own example, credits and publishing record.
-
-[Open the live collection demo](https://troyjlorents-gh.github.io/automateflows-design-collection/)
-
-[Use the hero on 21st](https://21st.dev/@troyjlorents-gh/components/dimensional-workflow-hero)
-
-[Copy the short installation prompt](prompts/dimensional-workflow-hero/INSTALL.md) into your coding agent. It installs the published component without pasting the full implementation.
+[Live collection](https://troyjlorents-gh.github.io/automateflows-design-collection/) · [21st component](https://21st.dev/@troyjlorents-gh/components/dimensional-workflow-hero) · [Original full showcase](https://troyjlorents-gh.github.io/automateflows-design-collection/?showcase)
 
 ```sh
 npx @21st-dev/cli add @troyjlorents-gh/dimensional-workflow-hero
@@ -16,52 +10,60 @@ npx @21st-dev/cli add @troyjlorents-gh/dimensional-workflow-hero
 
 ![Dimensional Workflow Hero](components/dimensional-workflow-hero/preview.jpg)
 
-## Run the collection
+## Two examples, one collection
+
+| Item | Purpose | Source |
+| --- | --- | --- |
+| Dimensional Workflow Hero | Compact reusable 3D scroll component published to 21st. Supply your own panel content. | [Component](components/dimensional-workflow-hero/DimensionalWorkflowHero.tsx), [demo](components/dimensional-workflow-hero/DimensionalWorkflowHero.demo.tsx), [custom example](examples/dimensional-workflow-hero/CustomizedHero.tsx) |
+| Full workflow showcase | Original detailed workflow nodes, database, code and finished-site scenes. Retained as a complete example. | [Full source](examples/full-workflow-showcase/DimensionalWorkflowHero.tsx), [demo](examples/full-workflow-showcase/DimensionalWorkflowHero.demo.tsx) |
+
+The October 12 compact release changes the published component API. Earlier integrations using `content` or `defaultHeroContent` can keep their existing version or use the full showcase source above. The published version now takes `title` and `chapters` with React `panel` slots.
+
+## Use the compact component
 
 ```sh
-npm ci
-npm run dev
+npm install gsap @gsap/react
 ```
 
-Use `npm run build` for the production build. Node.js 20.19+ or 22.12+ is required by Vite.
-
-## Collection
-
-| Design | Component | Example | Prompt |
-| --- | --- | --- | --- |
-| Dimensional Workflow Hero | [Source](components/dimensional-workflow-hero/DimensionalWorkflowHero.tsx) | [Controlled demo](components/dimensional-workflow-hero/DimensionalWorkflowHero.demo.tsx), [custom copy](examples/dimensional-workflow-hero/CustomizedHero.tsx) | [Short install prompt](prompts/dimensional-workflow-hero/INSTALL.md), [build prompt](prompts/dimensional-workflow-hero/BUILD.md), [adaptation prompt](prompts/dimensional-workflow-hero/ADAPT.md) |
-
-## Install one component
-
-```sh
-npm install gsap @gsap/react lucide-react
-```
-
-Copy `DimensionalWorkflowHero.tsx` into your React project. It includes its own scoped CSS, supporting panel components and exported types. It does not need the Automate Flows website, image files, font files, Tailwind, a router, or a backend.
+Copy the component into your React project. Its scoped CSS is included. No Tailwind, image assets, font download, router or backend is required. The example demo additionally uses `lucide-react` for icons.
 
 ```tsx
 import DimensionalWorkflowHero from './DimensionalWorkflowHero';
 
 export default function Page() {
-  return <>
-    <DimensionalWorkflowHero />
-    <section id="examples">Your next section</section>
-  </>;
+  return <DimensionalWorkflowHero
+    title={<>Good ideas.<br /><em>Working systems.</em></>}
+    description="A brief introduction to your work."
+    accent="#22dde7"
+    chapters={[
+      { label: 'Discover', title: 'Start with the real work.', panel: <YourFirstPanel /> },
+      { label: 'Build', title: 'Connect the pieces.', panel: <YourSecondPanel /> },
+      { label: 'Launch', title: 'Put it to work.', panel: <YourThirdPanel /> },
+    ]}
+  />;
 }
 ```
 
-Set `content` to change text, chapters, diagrams, CTA links and optional finished-site imagery. Exported `defaultHeroContent` is a useful starting point. The default build chapter draws a neutral CSS mockup; no branded product screenshot is included. Workflow diagrams are illustrative.
+Supply one to five chapters. Each has `label`, `title`, optional `description`, and `panel`. Panels can contain diagrams, screenshots or React UI. Keep panel controls decorative: only the focused chapter is exposed to keyboard and assistive technology while the desktop timeline runs. Design panels for a 720 × 430 desktop canvas and a fluid static mobile layout. Optional `data-hero-step` elements lift in sequence during their chapter.
 
-Set `accent`, `className`, `style`, and `motion` to adapt appearance and pacing. `motion` supports `viewportsPerChapter` (default 1.35), `maxChapterScroll` (1350px) and `scrub` (0.65). Supply at least one chapter; an empty array falls back to the demo chapters. Use one to five chapters for the supported example layouts, with three narrative steps per chapter. More chapters may need a different intro composition.
+Optional props: `eyebrow`, `description`, `finale` (React content), `accent`, `className`, `style`, `viewportsPerChapter` (default 1.35) and `scrub` (default 0.65 seconds). The accent inherits `--color-primary` with a cyan fallback. Typography inherits the host font. Use the scoped `--dwh-bg` variable to change the dark canvas.
 
-The working demo has a **Customize demo** disclosure with accent, scroll-distance and smoothing controls. These controls live in the demo itself and work without a hosting platform's control bridge. The demo raises the distance cap to 2700px to allow the full slider range. Motion-setting changes rebuild the scoped timeline and restore the active chapter.
+The desktop scene scales into embedded previews down to a 600px viewport width and 360px height. Pin and scroll measurements use the actual viewport. Smaller viewports and reduced-motion preferences get the same content in a static reading sequence. There is no motion toggle or stored preference override. The overview button, chapter navigation and skip link are included. Avoid placing the hero inside transformed ancestors or custom scrolling containers without adapting the ScrollTrigger configuration.
 
-The hero is deliberately a dark visual canvas in both light and dark host themes. Its accent inherits `--color-primary` when no explicit accent is supplied. Scoped `--color-hero-*` and `--font-hero-*` variables let you match your site. Set skip and finale targets to existing elements or routes.
+## Run locally
 
-The default responsive hero animates above 900px wide and 649px tall. The registry demo uses `presentation="scaled-desktop"` to fit the desktop composition into embedded frames as small as 600px wide and 360px tall. It scales the visual scene while keeping scroll and pin measurements at the actual frame size. Phones and reduced-motion preferences still use the static reading layout. There is no Simplify motion button or stored motion override. Resize refresh preserves reading position within the active desktop story.
+```sh
+npm ci
+npm run dev
+npm run build
+```
 
-## Publishing and provenance
+Node.js 20.19+ or 22.12+ is required by Vite. The default page runs the compact demo. `?showcase` opens the preserved full example. Development checks can use `?chapters=1`, `?chapters=5` or `?instances`.
 
-[21st publishing files and status](publishing/21st/dimensional-workflow-hero.md). The GitHub collection and 21st component are separate releases; a draft is not a published listing.
+## Prompts and publishing
 
-[Credits and asset boundaries](ATTRIBUTION.md). The original homepage is at https://automateflows.io/. This repository contains a reusable adaptation, not the site's complete source or client data.
+[Short installation prompt](prompts/dimensional-workflow-hero/INSTALL.md) · [Build prompt](prompts/dimensional-workflow-hero/BUILD.md) · [Adaptation prompt](prompts/dimensional-workflow-hero/ADAPT.md)
+
+[21st publishing record](publishing/21st/dimensional-workflow-hero.md) · [Validation](publishing/VALIDATION.md) · [Credits and asset boundaries](ATTRIBUTION.md)
+
+This repository is a reusable adaptation of work at [Automate Flows](https://automateflows.io/). It does not include the site's complete source or client data. Social copy is a draft, not a record of sent messages.
