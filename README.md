@@ -8,6 +8,8 @@ This collection starts with the **Dimensional Workflow Hero**, adapted from the 
 
 [Use the hero on 21st](https://21st.dev/@troyjlorents-gh/components/dimensional-workflow-hero)
 
+[Copy the short installation prompt](prompts/dimensional-workflow-hero/INSTALL.md) into your coding agent. It installs the published component without pasting the full implementation.
+
 ```sh
 npx @21st-dev/cli add @troyjlorents-gh/dimensional-workflow-hero
 ```
@@ -27,7 +29,7 @@ Use `npm run build` for the production build. Node.js 20.19+ or 22.12+ is requir
 
 | Design | Component | Example | Prompt |
 | --- | --- | --- | --- |
-| Dimensional Workflow Hero | [Source](components/dimensional-workflow-hero/DimensionalWorkflowHero.tsx) | [Controlled demo](components/dimensional-workflow-hero/DimensionalWorkflowHero.demo.tsx), [custom copy](examples/dimensional-workflow-hero/CustomizedHero.tsx) | [Build prompt](prompts/dimensional-workflow-hero/BUILD.md), [adaptation prompt](prompts/dimensional-workflow-hero/ADAPT.md) |
+| Dimensional Workflow Hero | [Source](components/dimensional-workflow-hero/DimensionalWorkflowHero.tsx) | [Controlled demo](components/dimensional-workflow-hero/DimensionalWorkflowHero.demo.tsx), [custom copy](examples/dimensional-workflow-hero/CustomizedHero.tsx) | [Short install prompt](prompts/dimensional-workflow-hero/INSTALL.md), [build prompt](prompts/dimensional-workflow-hero/BUILD.md), [adaptation prompt](prompts/dimensional-workflow-hero/ADAPT.md) |
 
 ## Install one component
 
