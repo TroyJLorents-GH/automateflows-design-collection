@@ -59,6 +59,8 @@ The initial deck spacing keeps all three panels inside the desktop canvas. Stati
 
 A 27.4-second 1440 x 900 recording was captured from actual browser frames while sending wheel input through the supported browser API. `components/dimensional-workflow-hero/preview.mp4` is H.264, 30fps, approximately 1.6 MB. Its cover is a fresh browser screenshot without a scrollbar or clipped panel. No video generation model was used for this local recording.
 
-The 21st revision was uploaded for stable component:21031 and reviewed in light/dark host themes and the 375px mobile mode. The live hosted demo contains the new panels and unnumbered labels. Publication and review status will be recorded after confirmation. Actual Mac Chrome remains untested.
+The 21st revision was uploaded for stable component:21031 and reviewed in light/dark host themes and the 375px mobile mode. The live hosted demo contains the new panels and unnumbered labels. The CLI confirmed Published, and the 21st resubmit endpoint returned component 21031 with reviewStatus in_review on October 14, 2026. Actual Mac Chrome remains untested.
 
 The browser extension blocked manual MP4 attachment because file URL access was disabled. The installed CLI mislabels GIF uploads as PNG, so the final upload uses an animated WebP: 800 x 500, 12fps, 685,128 bytes. An alternate GIF is retained locally. Both derive from the same real recording. The MP4 remains in the collection. No extension permissions were changed.
+
+Final source totals: 12,878 characters / 244 lines for the core and 9,781 characters / 90 lines for the demo. The combined source is 22,659 characters / 334 lines; the generated integration prompt adds its own instructions. Five-panel navigation retains the fifth chapter after resizing from 1440 to 782px, with zero horizontal overflow after layout refresh. GitHub Pages deployment for implementation commit 70a0e81 succeeded (run 38613062014).
