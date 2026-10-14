@@ -67,3 +67,7 @@ Node.js 20.19+ or 22.12+ is required by Vite. The default page runs the compact 
 [21st publishing record](publishing/21st/dimensional-workflow-hero.md) · [Validation](publishing/VALIDATION.md) · [Credits and asset boundaries](ATTRIBUTION.md)
 
 This repository is a reusable adaptation of work at [Automate Flows](https://automateflows.io/). It does not include the site's complete source or client data. Social copy is a draft, not a record of sent messages.
+
+### Motion preview
+
+[Watch the recorded 3D scroll sequence](components/dimensional-workflow-hero/preview.mp4). The default demo includes a workflow diagram, connected records and an illustrative website.

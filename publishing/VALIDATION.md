@@ -50,3 +50,15 @@ Verification:
 - The public 21st page serves the revised source and functioning embedded motion.
 
 Chromium only. The user's actual Mac, Safari, Firefox, real touch devices and GPU performance have not been independently tested. The 21st preview host still adds a narrow horizontal scrollbar in its own frame; it does not disable the motion and was not reproduced in the standalone collection.
+
+## October 14 presentation correction
+
+The compact demo now includes a workflow diagram, a records table and an illustrative website. Decorative chapter numbers and collection footer numbering were removed; the retained full showcase also has unnumbered labels. The full example otherwise retains its original renderer.
+
+The initial deck spacing keeps all three panels inside the desktop canvas. Static layouts place each panel before its chapter copy. At 390 x 844 the first panel starts at 324px, with no horizontal overflow and zero pin spacers. A reduced-motion desktop check also has zero pins. The 1440 x 900 animated view has one pin; real wheel input traversed every chapter and the finale. The build passes strict TypeScript and Vite.
+
+A 27.4-second 1440 x 900 recording was captured from actual browser frames while sending wheel input through the supported browser API. `components/dimensional-workflow-hero/preview.mp4` is H.264, 30fps, approximately 1.6 MB. Its cover is a fresh browser screenshot without a scrollbar or clipped panel. No video generation model was used for this local recording.
+
+The 21st revision was uploaded for stable component:21031 and reviewed in light/dark host themes and the 375px mobile mode. The live hosted demo contains the new panels and unnumbered labels. Publication and review status will be recorded after confirmation. Actual Mac Chrome remains untested.
+
+The browser extension blocked manual MP4 attachment because file URL access was disabled. The installed CLI mislabels GIF uploads as PNG, so the final upload uses an animated WebP: 800 x 500, 12fps, 685,128 bytes. An alternate GIF is retained locally. Both derive from the same real recording. The MP4 remains in the collection. No extension permissions were changed.

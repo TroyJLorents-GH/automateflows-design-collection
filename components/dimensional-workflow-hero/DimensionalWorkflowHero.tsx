@@ -60,13 +60,13 @@ export default function DimensionalWorkflowHero({
       };
       element.classList.add("is-animated");
       fit();
-      gsap.set(stage, { zIndex: (i: number) => panels.length - i, x: () => scene.clientWidth * 0.75, y: () => scene.clientHeight * 0.52 });
+      gsap.set(stage, { zIndex: (i: number) => panels.length - i, x: () => scene.clientWidth * 0.73, y: () => scene.clientHeight * 0.52 });
       gsap.set(copies, { autoAlpha: 0, y: 28 });
       if (end) gsap.set(end, { autoAlpha: 0, y: 28 });
       panels.forEach((panel, i) => gsap.set(panel, {
-        xPercent: -50, yPercent: -50, x: 40 + (i - middle) * 220,
+        xPercent: -50, yPercent: -50, x: -20 + (i - middle) * Math.min(145, 290 / Math.max(1, panels.length - 1)),
         y: i === Math.floor(middle) ? -10 : 30, z: -i * 100,
-        rotationY: -32, rotationX: 12, rotationZ: -3, scale: 0.68,
+        rotationY: -32, rotationX: 12, rotationZ: -3, scale: 0.62,
         zIndex: panels.length - i, transformPerspective: 1500,
       }));
       let active = -2;
@@ -127,6 +127,7 @@ export default function DimensionalWorkflowHero({
       const beforeRefresh = () => {
         progress = tl.scrollTrigger?.isActive ? tl.scrollTrigger.progress : null;
         fit();
+        gsap.set(stage, { x: scene.clientWidth * 0.73, y: scene.clientHeight * 0.52 });
       };
       const afterRefresh = () => {
         const trigger = tl.scrollTrigger;
@@ -176,9 +177,9 @@ export default function DimensionalWorkflowHero({
             {!!visibleChapters.length && <button className="dwh-action" onClick={() => goTo(0)}>See how it flows <span aria-hidden="true">↓</span></button>}
           </div>
           {visibleChapters.map((chapter, i) => (
-            <article className="dwh-chapter" key={i}>
-              <div className="dwh-copy" id={`${id}-${i}`}>
-                <p className="dwh-label">{String(i + 1).padStart(2, "0")} / {chapter.label}</p>
+            <article className="dwh-chapter" key={i} id={`${id}-${i}`}>
+              <div className="dwh-copy">
+                <p className="dwh-label">{chapter.label}</p>
                 <h2>{chapter.title}</h2>
                 {chapter.description && <div className="dwh-description">{chapter.description}</div>}
               </div>
@@ -214,9 +215,14 @@ const styles = `
 .dwh button{font-family:inherit}
 .dwh :is(a,button):focus-visible{outline:3px solid var(--dwh-accent);outline-offset:5px}
 .dwh .dwh-intro,.dwh .dwh-copy,.dwh .dwh-finale{padding:64px 6%}
-.dwh:not(.is-animated) .dwh-copy{padding-bottom:24px}
-.dwh:not(.is-animated) .dwh-stage{display:contents}
-.dwh:not(.is-animated) .dwh-panel{margin:0 6% 32px;overflow:hidden;border-radius:10px;border:1px solid #ffffff26}
+.dwh:not(.is-animated) .dwh-intro{padding:36px 6% 28px}
+.dwh:not(.is-animated) .dwh-label{margin-bottom:16px}
+.dwh:not(.is-animated) .dwh-description{margin:18px 0;font-size:15px}
+.dwh:not(.is-animated) .dwh-chapter{display:flex;flex-direction:column}
+.dwh:not(.is-animated) .dwh-copy{padding:24px 6% 48px}
+.dwh:not(.is-animated) .dwh-chapter .dwh-stage{display:block;order:-1}
+.dwh:not(.is-animated) .dwh-chapter{scroll-margin-top:16px}
+.dwh:not(.is-animated) .dwh-panel{margin:0 6%;overflow:hidden;border-radius:10px;border:1px solid #ffffff26}
 .dwh .dwh-finale{text-align:center}
 .dwh .dwh-nav,.dwh .dwh-hint{display:none}
 .dwh.is-animated .dwh-chapter{display:contents}

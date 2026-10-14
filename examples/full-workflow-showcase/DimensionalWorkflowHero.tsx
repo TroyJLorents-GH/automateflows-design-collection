@@ -265,7 +265,7 @@ function DevelopmentPanel({ chapter }: { chapter: BuildChapter }) {
       <div className="build-scenes">
         <section className="build-scene data-scene">
           <div className="build-label">
-            {"01 / DATABASE "}
+            {"DATABASE "}
             <span>{"Illustrative project schema"}</span>
           </div>
           <h3>{"A foundation for the product."}</h3>
@@ -325,7 +325,7 @@ function DevelopmentPanel({ chapter }: { chapter: BuildChapter }) {
         </section>
         <section className="build-scene code-scene">
           <div className="build-label">
-            {"02 / APPLICATION "}
+            {"APPLICATION "}
             <span>{"Illustrative React component"}</span>
           </div>
           <div className="code-tab">
@@ -364,7 +364,7 @@ function DevelopmentPanel({ chapter }: { chapter: BuildChapter }) {
         </section>
         <section className="build-scene frontend-scene">
           <div className="build-label">
-            {"03 / FINISHED WEBSITE "}
+            {"FINISHED WEBSITE "}
             <span>{site?.label ?? "Your finished site"}</span>
           </div>
           {site ? (
@@ -514,7 +514,6 @@ const CHAPTER = 5;
 const FINALE_OFFSET = 4.2;
 const FINALE_HOLD = 0.8;
 
-const pad = (n: number) => String(n).padStart(2, "0");
 
 
 function RichLines({ text }: { text: EmphasisText }) {
@@ -913,7 +912,7 @@ export default function DimensionalWorkflowHero({ content = defaultHeroContent, 
                   <ol>
                     {chapter.steps.map((step, j) => (
                       <li key={step.title}>
-                        <span>{pad(j + 1)}</span>
+                        <span aria-hidden="true">•</span>
                         <div>
                           <h3>{step.title}</h3>
                           <p>{step.body}</p>

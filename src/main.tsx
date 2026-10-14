@@ -16,7 +16,7 @@ function App() {
       <DimensionalWorkflowHero title={<>Less busywork.<br /><em>More possibility.</em></>} chapters={chapters} />
       {query.has("instances") && <DimensionalWorkflowHero title="Second instance" chapters={chapters} accent="#a8df80" />}
     </> : <Demo />}
-    <footer className="collection-info"><p>01 / DIMENSIONAL WORKFLOW HERO</p><h2>Code, examples and the prompt.</h2><p>The compact component handles the 3D scroll effect. The original workflow showcase is also included in this collection.</p><div className="links"><a href="https://github.com/TroyJLorents-GH/automateflows-design-collection/tree/main/components/dimensional-workflow-hero">Component</a><a href="?showcase">Full showcase</a><a href="https://github.com/TroyJLorents-GH/automateflows-design-collection/tree/main/prompts">Prompts</a><a href="https://automateflows.io/">Original project</a></div></footer>
+    <footer className="collection-info"><p>DIMENSIONAL WORKFLOW HERO</p><h2>Code, examples and the prompt.</h2><p>The compact component handles the 3D scroll effect. The original workflow showcase is also included in this collection.</p><div className="links"><a href="https://github.com/TroyJLorents-GH/automateflows-design-collection/tree/main/components/dimensional-workflow-hero">Component</a><a href="?showcase">Full showcase</a><a href="https://github.com/TroyJLorents-GH/automateflows-design-collection/tree/main/prompts">Prompts</a><a href="https://automateflows.io/">Original project</a></div></footer>
   </>;
 }
 createRoot(document.getElementById("root")!).render(<StrictMode><App /></StrictMode>);
